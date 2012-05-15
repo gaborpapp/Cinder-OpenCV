@@ -16,3 +16,5 @@ lib/cinder*.lib
 *.sdf
 Debug/
 Release/
+
+scons/*.pyc
