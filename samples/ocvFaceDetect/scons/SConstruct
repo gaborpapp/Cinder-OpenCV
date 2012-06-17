@@ -1,5 +1,6 @@
-TARGET = 'ocvOpticalFlowApp'
-APP_SOURCES = ['ocvOpticalFlowApp.cpp']
+TARGET = 'ocvFaceDetectApp'
+APP_SOURCES = ['ocvFaceDetectApp.cpp']
+ASSETS = ['haarcascade_eye.xml', 'haarcascade_frontalface_alt.xml']
 DEBUG = 0
 
 env = Environment()
@@ -10,5 +11,5 @@ env = SConscript('../../../scons/SConscript', exports = ['env'])
 env.Append(APP_SOURCES = APP_SOURCES)
 
 SConscript('../../../../../scons/SConscript',
-	exports = ['env', 'TARGET', 'DEBUG'])
+	exports = ['env', 'TARGET', 'ASSETS', 'DEBUG'])
 
