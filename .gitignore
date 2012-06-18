@@ -17,4 +17,5 @@ lib/cinder*.lib
 Debug/
 Release/
 
-scons/*.pyc
+# scons
+.sconsign.dblite

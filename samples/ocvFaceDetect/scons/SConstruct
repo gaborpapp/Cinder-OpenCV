@@ -1,15 +1,11 @@
-TARGET = 'ocvFaceDetectApp'
-APP_SOURCES = ['ocvFaceDetectApp.cpp']
-ASSETS = ['haarcascade_eye.xml', 'haarcascade_frontalface_alt.xml']
-DEBUG = 0
-
 env = Environment()
 
+env['APP_TARGET'] = 'ocvFaceDetectApp'
+env['APP_SOURCES'] = ['ocvFaceDetectApp.cpp']
+env['ASSETS'] = ['haarcascade_eye.xml', 'haarcascade_frontalface_alt.xml']
+env['DEBUG'] = 0
+
 # Cinder-OpenCV block
-env = SConscript('../../../scons/SConscript', exports = ['env'])
+env = SConscript('../../../scons/SConscript', exports = 'env')
 
-env.Append(APP_SOURCES = APP_SOURCES)
-
-SConscript('../../../../../scons/SConscript',
-	exports = ['env', 'TARGET', 'ASSETS', 'DEBUG'])
-
+SConscript('../../../../../scons/SConscript', exports = 'env')

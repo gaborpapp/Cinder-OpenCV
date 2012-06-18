@@ -1,14 +1,11 @@
-TARGET = 'ocvOpticalFlowApp'
-APP_SOURCES = ['ocvOpticalFlowApp.cpp']
-DEBUG = 0
-
 env = Environment()
 
+env['APP_TARGET'] = 'ocvOpticalFlowApp'
+env['APP_SOURCES'] = ['ocvOpticalFlowApp.cpp']
+env['DEBUG'] = 0
+
 # Cinder-OpenCV block
-env = SConscript('../../../scons/SConscript', exports = ['env'])
+env = SConscript('../../../scons/SConscript', exports = 'env')
 
-env.Append(APP_SOURCES = APP_SOURCES)
-
-SConscript('../../../../../scons/SConscript',
-	exports = ['env', 'TARGET', 'DEBUG'])
+SConscript('../../../../../scons/SConscript', exports = 'env')
 

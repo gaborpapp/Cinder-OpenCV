@@ -1,14 +1,11 @@
-TARGET = 'ocvCaptureApp'
-APP_SOURCES = ['ocvCaptureApp.cpp']
-DEBUG = 0
-
 env = Environment()
+
+env['APP_TARGET'] = 'ocvCaptureApp'
+env['APP_SOURCES'] = ['ocvCaptureApp.cpp']
+env['DEBUG'] = 0
 
 # Cinder-OpenCV block
 env = SConscript('../../../scons/SConscript', exports = ['env'])
 
-env.Append(APP_SOURCES = APP_SOURCES)
-
-SConscript('../../../../../scons/SConscript',
-	exports = ['env', 'TARGET', 'DEBUG'])
+SConscript('../../../../../scons/SConscript', exports = ['env'])
 
