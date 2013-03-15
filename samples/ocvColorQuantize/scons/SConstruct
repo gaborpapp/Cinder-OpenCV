@@ -1,0 +1,12 @@
+env = Environment()
+
+env['APP_TARGET'] = 'ocvColorQuantizeApp'
+env['APP_SOURCES'] = ['ocvColorQuantizeApp.cpp']
+env['ASSETS'] = ['nyc.jpg']
+env['DEBUG'] = 0
+
+# Cinder-OpenCV block
+env = SConscript('../../../scons/SConscript', exports = ['env'])
+
+SConscript('../../../../../scons/SConscript', exports = ['env'])
+

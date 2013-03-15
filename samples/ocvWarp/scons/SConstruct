@@ -1,0 +1,12 @@
+env = Environment()
+
+env['APP_TARGET'] = 'ocvWarpApp'
+env['APP_SOURCES'] = ['ocvWarpApp.cpp']
+env['ASSETS'] = ['aus.jpg']
+env['DEBUG'] = 0
+
+# Cinder-OpenCV block
+env = SConscript('../../../scons/SConscript', exports = ['env'])
+
+SConscript('../../../../../scons/SConscript', exports = ['env'])
+
