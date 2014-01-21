@@ -8,7 +8,7 @@ if env['PLATFORM'] == 'darwin':
 				'libopencv_flann.a', 'libopencv_gpu.a',
 				'libopencv_haartraining_engine.a', 'libopencv_imgproc.a',
 				'libopencv_legacy.a', 'libopencv_ml.a',
-				'libopencv_objdetect.a', 'libopencv_video.a']
+				'libopencv_nonfree.a', 'libopencv_objdetect.a', 'libopencv_video.a']
 	_LIBS = [Dir('../lib/macosx/').abspath + '/' + s for s in _LIBS]
 else:
 	_LIBS = []
